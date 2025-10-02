@@ -39,7 +39,7 @@ from rest_framework import generics,mixins
 #         employee.delete()
 #         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
+"""
 # Mixins
 class EmployeeList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
     queryset = Employees.objects.all()
@@ -66,3 +66,16 @@ class EmployeeDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.
     
     def delete(self, request, emp_id):
         return self.destroy(request, emp_id)
+"""
+
+
+# Generics
+class EmployeeList(generics.ListCreateAPIView):
+    queryset = Employees.objects.all()
+    serializer_class = EmployeeSerializer
+
+
+class EmployeeDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Employees.objects.all()
+    serializer_class = EmployeeSerializer
+    lookup_field = 'emp_id'
