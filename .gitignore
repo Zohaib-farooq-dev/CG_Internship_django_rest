@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+/media
+/staticfiles
+/static
+/local_settings.py
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# IDEs and editors
+.vscode/
+
+# System files
+.DS_Store
